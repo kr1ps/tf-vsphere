@@ -1,7 +1,0 @@
-[terraform]
-"{{ lookup('env','vsphere_virtual_machine.vm.default_ip_address') }}"
-
-# Variables for all the servers
-[terraform:vars]
-ansible_ssh_user="{{ lookup('env','var.ubuntu_name') }}"
-ansible_ssh_pass="{{ lookup('env','var.ubuntu_name') }}"
