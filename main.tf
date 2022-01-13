@@ -37,7 +37,7 @@ data "vsphere_virtual_machine" "vm_template" {
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "learn-terraform"
+  name             = "${terraform.workspace}-vm-terraform"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
 
