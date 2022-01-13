@@ -49,7 +49,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   wait_for_guest_net_timeout = -1
-  wait_for_guest_ip_timeout  = -1
+  wait_for_guest_ip_timeout  = 3
 
   disk {
     label            = "disk0"
