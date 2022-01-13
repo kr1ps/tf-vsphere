@@ -18,7 +18,7 @@ data "vsphere_datacenter" "dc" {
 
 data "vsphere_resource_pool" "pool" {
   name          = "esx-02.kr1ps.com/Resources"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+  datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 data "vsphere_datastore" "datastore" {
@@ -32,7 +32,7 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "vm_template" {
-  name          =  "${var.ubuntu_name}"
+  name          = var.ubuntu_name
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
