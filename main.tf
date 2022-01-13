@@ -32,7 +32,7 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "vm_template" {
-  name          =  "${var.ubuntu_name}" #"/${var.datacenter}/Templates/vm/${var.ubuntu_name}"
+  name          =  terraform.workspace == "default" ? "prod-terraform" : "${terraform.workspace}-terraform" #"${var.ubuntu_name}"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
