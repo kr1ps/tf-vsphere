@@ -64,6 +64,10 @@ resource "vsphere_virtual_machine" "vm" {
   }
 }
 
+resource "time_sleep" "wait_5_seconds" {
+  create_duration = "5s"
+}
+
 output "vm_ip" {
   value = vsphere_virtual_machine.vm.guest_ip_addresses
 }
