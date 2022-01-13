@@ -63,6 +63,7 @@ resource "vsphere_virtual_machine" "vm" {
     template_uuid = data.vsphere_virtual_machine.vm_template.id
   }
 
+  #this block its for auto excecute ansible playbook on new ambient. this particular one its for push ssh pub key into the user
   provisioner "local-exec" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u '${var.ssh_user}' -i '${vsphere_virtual_machine.vm.default_ip_address},' --extra-vars '{'ansible_ssh_pass':'${var.ssh_password}'}' deploy_authorized_keys.yml"
   }
