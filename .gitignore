@@ -1,7 +1,3 @@
-# Packer variable files
-*.pkrvars.hcl
-**/packer_cache/*
-
 # Local .terraform directories
 **/.terraform/*
 
@@ -17,7 +13,7 @@ crash.log
 # control as they are data points which are potentially sensitive and subject 
 # to change depending on the environment.
 #
-*.tfvars
+terraform.tfvars
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
