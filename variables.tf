@@ -38,3 +38,13 @@ variable "ubuntu_name" {
   description = "CentOS name (ie: image_path)"
   type        = string
 }
+
+variable "ssh_password" {
+  description = "ssh password (ie: testpasswd)"
+  type        = string
+}
+
+variable "ssh_user" {
+  description = "ssh user (ie: test)"
+  type        = string
+}

@@ -62,6 +62,10 @@ resource "vsphere_virtual_machine" "vm" {
   clone {
     template_uuid = data.vsphere_virtual_machine.vm_template.id
   }
+
+  provisioner "local-exec" {
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u '${var.ssh_user}' -i '${vsphere_virtual_machine.vm.default_ip_address},' --extra-vars '{'ansible_ssh_pass':'${var.ssh_password}'}' deploy_authorized_keys.yml"
+  }
 }
 
 output "vm_ip" {
