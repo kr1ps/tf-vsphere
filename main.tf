@@ -32,12 +32,12 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "vm_template" {
-  name          =  terraform.workspace == "default" ? "prod-terraform" : "${terraform.workspace}-terraform" #"${var.ubuntu_name}"
+  name          =  "${var.ubuntu_name}"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "${terraform.workspace}-vm-terraform"
+  name             = terraform.workspace == "default" ? "prod-terraform" : "${terraform.workspace}-terraform" #"${terraform.workspace}-vm-terraform"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
 
