@@ -1,4 +1,4 @@
-# Learn Terraform vSphere
+# Terraform vSphere
 
 This repo deploy a new vm on vsphere from a existing vm-template  using Hashicorp's terraform automatically.  
 
