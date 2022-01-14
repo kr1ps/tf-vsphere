@@ -1,6 +1,6 @@
 # Terraform vSphere
 
-This repo deploy a new vm on vsphere from a existing vm-template  using Hashicorp's terraform automatically.  
+This repo deploy a new vm on vsphere from an existing vm-template  using Hashicorp's terraform automatically.
 
 ## How to use this repo
 
