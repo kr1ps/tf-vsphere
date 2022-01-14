@@ -49,7 +49,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   wait_for_guest_net_timeout = -1
-  wait_for_guest_ip_timeout  = 3
+  wait_for_guest_ip_timeout  = 5
 
   disk {
     label            = "disk0"
@@ -64,9 +64,9 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   #this block its for auto excecute ansible playbook on new ambient. this particular one its for push ssh pub key into the user
-  provisioner "local-exec" {
-    command = "sleep 10 && ansible-playbook -u '${var.ssh_user}' -i '${vsphere_virtual_machine.vm.default_ip_address},' apache-install.yml --key-file '~/.ssh/id_ed25519'"
-  }
+  #provisioner "local-exec" {
+  #  command = "sleep 20 && ansible-playbook -u '${var.ssh_user}' -i '${vsphere_virtual_machine.vm.default_ip_address},' apache-install.yml --key-file '~/.ssh/id_ed25519'"
+  #}
 }
 
 output "vm_ip" {
