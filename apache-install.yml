@@ -2,6 +2,7 @@
   - name: Install Apache.
     hosts: all
     become: true
+    # gather_facts: false
 
     vars:
       apache_package: apache2
