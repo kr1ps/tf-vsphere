@@ -75,5 +75,5 @@ output "vm_ip" {
 
 
 output "web_url" {
-  value = "http://'${vsphere_virtual_machine.vm.default_ip_address}'"
+  value = "http://${vsphere_virtual_machine.vm.default_ip_address}"
 }
