@@ -31,7 +31,7 @@
           content: |
             <html>
             <head><title>Hello world!</title></head>
-            <body>Hello world!3 Your IP address is: <? echo $_SERVER["REMOTE_ADDR"]; ?></body>
+            <body>Hello world!</body>
             </html>
           dest: "/var/www/html/index.html"
         notify: restart apache
