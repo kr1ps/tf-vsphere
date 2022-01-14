@@ -73,6 +73,7 @@ output "vm_ip" {
   value = vsphere_virtual_machine.vm.guest_ip_addresses
 }
 
-output "ansible_playbook_command" {
-  value = "ansible-playbook -u '${var.ssh_user}' -i '${vsphere_virtual_machine.vm.default_ip_address},' apache-install.yml --key-file '~/.ssh/id_ed25519'"
+
+output "web_url" {
+  value = "http://'${vsphere_virtual_machine.vm.default_ip_address}'"
 }
